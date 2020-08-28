@@ -15,3 +15,16 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+// JS
+import 'jquery'
+import 'popper.js'
+import 'bootstrap'
+
+// CSS
+//import "@fortawesome/fontawesome-free/css/all.css"
+import 'stylesheets/application'
+
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+

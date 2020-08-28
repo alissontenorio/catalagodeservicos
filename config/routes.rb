@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  scope(path: '/catalogo') do
+    root 'main#index', as: 'main'
+
+    put '/autenticar', to: 'login#autenticar', as: 'auth'
+    get  '/sair', to: 'login#sair', as: 'logout'
+
+    get 'logado', to: 'main#logado', as: 'logado'
+  end
 end
