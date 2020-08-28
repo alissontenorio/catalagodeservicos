@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Catálogo de Serviços</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #c6151c;">
+      <a class="navbar-brand" href="#">Catálogo de Serviços</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Link 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Link 3</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-sm-5">
+        <li class="nav-item mr-sm-4">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Busca" aria-label="Search">
+            <button class="btn btn-light my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-confirmacao">Login</button>
+      </li>
+      </ul>
+    </nav>
+    <br>
+
+    <div class="container-fluid mt-3 w-75">
+      <%= yield %>
+
+      <!-- Tela de Login -->
+      <div id="modal-confirmacao" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <form>
+              <div class="modal-header">
+                <h5 class="modal-title">Deseja adicionar usuário?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Nome *</span>
+                  </div>
+                  <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite o nome completo" aria-label="Username" aria-describedby="basic-addon1" required>
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">CPF *</span>
+                  </div>
+                  <input type="number" name="cpf" id="cpf" class="form-control" placeholder="Digite o CPF sem pontos e traços" aria-label="Username" aria-describedby="basic-addon1" required>
+                </div>
+                <p class="font-weight-light"> * Campos Obrigatórios </p>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Logar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Fim da Tela de Login-->
+
+      <!-- Footer -->
+      <footer class="page-footer font-small bg-secondary pt-4 text-light">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+
+          <!-- Grid row -->
+          <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3">
+
+              <!-- Content -->
+              <h5 class="text-uppercase">Universidade Federal de Alagoas</h5>
+              <p>Núcleo de Tecnologia da Informação</p>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none pb-3">
+
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">
+
+              <!-- Links -->
+              <h5 class="text-uppercase">Links</h5>
+
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!">Link 4</a>
+                </li>
+              </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">
+
+              <!-- Links -->
+              <h5 class="text-uppercase">Links</h5>
+
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!">Link 4</a>
+                </li>
+              </ul>
+
+            </div>
+            <!-- Grid column -->
+
+          </div>
+          <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+          Universidade Federal de Alagoas - Desenvolvido por <a href="http://alisson.dev.br/">Alisson Tenório</a>
+        </div>
+        <!-- Copyright -->
+
+      </footer>
+      <!-- Footer -->
+  </body>
+</html>
