@@ -40,6 +40,6 @@ yarn-debug.log*
 # Credentials file
 .env*
 
-# Ignore IDE files
-Gemlock.lock
-yarn.lock
+# db
+db/development.sqlite3
+

@@ -1,113 +1,30 @@
-<div class="row mb-5">
-
+<% if @servicos.empty? %>
+  <div class="row mb-5">
+    <tr>
+      <td colspan="4">Nenhum serviço encontrado</td>
+    </tr>
+  </div>
+<% else %>
+  <% @servicos.each_with_index do |servico, i| %>
+    <% if i % 4 == 0 %>
+      <div class="row mb-5">
+    <% end %>
+    
     <div class="col-sm-3">
       <div class="card">
         <div class="card-header bg-light text-secondary">
-          <h5 class="card-title">Educação a distância</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <h5 class="card-title"><%= servico.titulo %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= servico.sub_titulo %></h6>
         </div>
         <div class="card-body">        
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text"><%= servico.descricao %></p>
           <a href="educacao.html" class="btn btn-primary">Solicitar</a>
         </div>
       </div>
     </div>
-    
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-header bg-light text-secondary">
-          <h5 class="card-title ">Special title treatment</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        </div>
-        <div class="card-body">        
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-header bg-light text-secondary">
-          <h5 class="card-title ">Special title treatment</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        </div>
-        <div class="card-body">        
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-header bg-light text-secondary">
-          <h5 class="card-title ">Special title treatment</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        </div>
-        <div class="card-body">        
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    
-  </div>
 
-  <div class="row mb-5"> 
-
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-header bg-light text-secondary">
-          <h5 class="card-title ">Special title treatment</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        </div>
-        <div class="card-body">        
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+    <% if i % 4 == 3 || servico == @servicos.last %>
       </div>
-    </div>
-    
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-header bg-light text-secondary">
-          <h5 class="card-title">Special title treatment</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        </div>
-        <div class="card-body">        
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-header bg-light text-secondary">
-          <h5 class="card-title ">Special title treatment</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        </div>
-        <div class="card-body">        
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-header bg-light text-secondary">
-          <h5 class="card-title ">Special title treatment</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        </div>
-        <div class="card-body">        
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-
-</div>
+    <% end %>    
+  <% end %>
+<% end %>
