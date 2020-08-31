@@ -1,11 +1,10 @@
-class CreateServicos < ActiveRecord::Migration[6.0]
+class CreateCategorias < ActiveRecord::Migration[6.0]
   def change
-    create_table :servicos do |t|
+    create_table :categorias do |t|
       t.string :titulo, null: false
       t.string :sub_titulo, null: false
       t.string :descricao, null: false
-      t.string :publico_alvo, null: false
-      t.string :documentos
+      #t.string :publico_alvo, null: false
       
       t.timestamps
     end

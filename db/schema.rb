@@ -10,16 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_30_034512) do
+ActiveRecord::Schema.define(version: 2020_08_30_204113) do
 
-  create_table "servicos", force: :cascade do |t|
+  create_table "categorias", force: :cascade do |t|
     t.string "titulo", null: false
     t.string "sub_titulo", null: false
     t.string "descricao", null: false
-    t.string "publico_alvo", null: false
-    t.string "documentos"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "servicos", force: :cascade do |t|
+    t.integer "categoria_id"
+    t.string "titulo", null: false
+    t.string "descricao", null: false
+    t.string "funcao", null: false
+    t.integer "tempo_de_espera_em_segundos", null: false
+    t.integer "prazo_para_cumprimento_em_segundos", null: false
+    t.string "atendimento_prioritario"
+    t.string "documentos_necessarios"
+    t.string "legislacao"
+    t.string "quem_pode_utilizar", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["categoria_id"], name: "index_servicos_on_categoria_id"
+  end
+
+  create_table "sub_categorias", force: :cascade do |t|
   end
 
 end

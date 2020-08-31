@@ -42,4 +42,6 @@ yarn-debug.log*
 
 # db
 db/development.sqlite3
+db/test.sqlite3
+
 

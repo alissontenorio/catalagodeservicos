@@ -1,0 +1,11 @@
+<div class="row mb-3 text-secondary">
+    <h1> <%= @servico.titulo %> </h2>
+</div>
+
+<p>Descrição do Serviço</p>
+<p>Descrição do Serviço</p>
+<p>Descrição do Serviço</p>
+
+<p>
+<%= link_to "Solicitar", formulario_solicitar_servico_path(categoria_titulo: @categoria.titulo.delete(' '), servico_id: @servico.id), class: "btn btn-primary" %>
+</p>

@@ -1,11 +1,11 @@
-<% if @servicos.empty? %>
+<% if @categorias.empty? %>
   <div class="row mb-5">
     <tr>
       <td colspan="4">Nenhum serviço encontrado</td>
     </tr>
   </div>
 <% else %>
-  <% @servicos.each_with_index do |servico, i| %>
+  <% @categorias.each_with_index do |categoria, i| %>
     <% if i % 4 == 0 %>
       <div class="row mb-5">
     <% end %>
@@ -13,17 +13,17 @@
     <div class="col-sm-3">
       <div class="card">
         <div class="card-header bg-light text-secondary">
-          <h5 class="card-title"><%= servico.titulo %></h5>
-          <h6 class="card-subtitle mb-2 text-muted"><%= servico.sub_titulo %></h6>
+          <h5 class="card-title"><%= categoria.titulo %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= categoria.sub_titulo %></h6>
         </div>
         <div class="card-body">        
-          <p class="card-text"><%= servico.descricao %></p>
-          <a href="educacao.html" class="btn btn-primary">Solicitar</a>
+          <p class="card-text"><%= categoria.descricao %></p>
+          <%= link_to "Solicitar", servicos_path(categoria.id), class: "btn btn-primary" %>
         </div>
       </div>
     </div>
 
-    <% if i % 4 == 3 || servico == @servicos.last %>
+    <% if i % 4 == 3 || categoria == @categorias.last %>
       </div>
     <% end %>    
   <% end %>

@@ -1,0 +1,33 @@
+<% if @servicos.empty? %>
+  <div class="row mb-5">
+    <tr>
+      <td colspan="4">Nenhum serviço encontrado</td>
+    </tr>
+  </div>
+<% else %>
+  <div class="row mb-3 text-secondary">
+    <h1> <%= @categoria.titulo %> </h2>
+  </div>
+  <% @servicos.each_with_index do |servico, i| %>    
+    <% if i % 4 == 0 %>
+      <div class="row mb-5">
+    <% end %>
+    
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-header bg-light text-secondary">
+          <h5 class="card-title"><%= servico.titulo %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%#= servico.sub_titulo %></h6>
+        </div>
+        <div class="card-body">        
+          <p class="card-text"><%= servico.descricao %></p>
+          <%= link_to "Solicitar", descricao_servico_path(categoria_titulo: @categoria.titulo.delete(' '), servico_id: servico.id), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+    <% if i % 4 == 3 || servico == @servicos.last %>
+      </div>
+    <% end %>    
+  <% end %>
+<% end %>
